@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\ClientController;
 use App\Http\Controllers\Api\BrandController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\SaleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,9 @@ Route::apiResource('brands', BrandController::class)->except([
 ]);
 
 Route::apiResource('products', ProductController::class)->except([
+    'create', 'show', 'edit'
+]);
+
+Route::apiResource('sales', SaleController::class)->except([
     'create', 'show', 'edit'
 ]);
